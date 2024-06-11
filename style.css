@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Mulish", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+  --hue: 244;
+  --color-base-white: hsl(calc(40 + var(--hue)), 47%, 97%);
+  --color-base-primary: hsl(var(--hue), 38%, 28%);
+  --color-base-secondary: hsl(calc(74 + var(--hue)), 69%, 42%);
+  --color-gradient: linear-gradient(96deg, hsl(var(--hue), 50%, 38%) 0%, hsl(var(--hue), 38%, 28%) 99.68%);
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--color-base-white);
+  color: var(--color-base-primary);
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-hero .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-hero h1 {
+  color: var(--color-base-secondary);
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+}
+
+.page-hero p {
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 600;
+}
+
+.page-hero svg {
+  margin-top: 3.6rem;
+}
+
+.page-hero svg rect {
+  stroke: var(--color-base-secondary);
+}
+
+.page-hero svg path {
+  fill: var(--color-base-secondary);
+  stroke: var(--color-base-secondary);
+}
+
+.page-hero figure img {
+  width: 36rem;
+}
+
+main .cards {
+  background-color: var(--color-base-primary);
+  margin: 6rem 0;
+  padding: 4rem;
+  display: grid;
+  gap: 5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.6rem;
+  border-radius: 2rem;
+  background: var(--color-base-white);
+  box-shadow: 0px 3.311px 13.243px 0px hsla(0, 0%, 0%, 0.25);
+}
+
+.card h2 {
+  color: var(--color-base-secondary);
+  font-size: 3rem;
+  font-weight: 900;
+  margin-top: 3.2rem;
+}
+
+.card p {
+  color: var(--color-base-primary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+form {
+  padding: 4rem;
+}
+
+form fieldset {
+  border: 0;
+}
+
+form fieldset legend {
+  color: var(--color-base-secondary);
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: 4rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.4rem;
+  position: relative;
+  padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  display: block;
+  border: 2px solid var(--color-base-primary);
+  border-radius: 1.6rem;
+  background-color: transparent;
+  color: #312D64;
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  padding: 1.2rem 1.2rem 1.2rem 4rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.input-wrapper textarea {
+  height: 12.6rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+  color: var(--color-base-primary)
+}
+
+.stars img {
+  height: 1rem;
+  opacity: 0;
+  visibility: hidden;
+}
+
+footer {
+  color: var(--color-base-white);
+
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  height: 7.8rem;
+  padding: 1.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-gradient);
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  main .cards {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 32rem);
+  }
+
+}
+
+@media (min-width: 991px) {
+  .page-hero {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .page-hero .content {
+    order: 1;
+  }
+
+  .page-hero figure {
+    order: 2;
+  }
+
+  .page-hero figure img {
+    width: 50rem;
+  }
+
+  .page-hero h1 {
+    font-size: 5.8rem;
+  }
+
+  .page-hero p {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 600;
+  }
+
+  main .cards {
+    grid-template-columns: repeat(3, 32rem);
+  }
+
+  .contato {
+    display: grid;
+    gap: 8rem;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 116rem;
+  }
+
+  .stars img {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
